@@ -1,5 +1,7 @@
 # kell-et-al-marmoset-benchmarking
-Behavioral data and images used to benchmark marmosets, human, macaque, and rats. 
+Repository describing data and images used to benchmark marmosets, human, macaque, and rats.
+
+The data described below can be downloaded <a href="https://www.dropbox.com/sh/ro27d32o9rmd3m1/AABxXtZvSW40vHLEHHlU0t6Va?dl=0">here</a>.
 
 From the preprint: 
 
