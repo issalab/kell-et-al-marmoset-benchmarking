@@ -7,7 +7,7 @@ This repository describes data and images used to benchmark marmosets, human, ma
 
 <p align="center"> <a href="http://www.alexkell.org">Alexander J.E. Kell</a>, Sophie L. Bokor, You-Nah Jeon, Tahereh Toosi, <a href="https://zuckermaninstitute.columbia.edu/elias-b-issa-phd">Elias B. Issa</a></p>
 
-The data and images for the experiments (including the images used to train the animals) can be downloaded <a href="https://www.dropbox.com/sh/ro27d32o9rmd3m1/AABxXtZvSW40vHLEHHlU0t6Va?dl=0">here</a>. 
+The data and images for the experiments (including the images used to train the animals) can be downloaded <a href="https://drive.google.com/drive/folders/1ROffAeMLelTZZGcjU37fwAtX_ZOleeSl?usp=sharing">here</a>. 
 
 The structure of the data and image directories is briefly described with some code snippets. For further questions, please email: first.last@columbia.edu (where first and last are, respectively, "alex" and "kell").
 
