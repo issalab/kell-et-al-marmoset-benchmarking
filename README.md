@@ -1,13 +1,13 @@
 # kell-et-al-marmoset-benchmarking
-This repository contains and describes data from benchmarking/comparing the high-level visual abilities of marmosets, humans, rhesus macaques, and rats. It also includes images used as stimuli for the comparisons, as well as images for animal training. It accompanies the preprint:
+This repository contains and describes data from work that benchmarks the high-level visual abilities of marmosets in comparison with humans, rhesus macaques, and rats. It also includes images used as stimuli for the comparisons, as well as images for animal training. It accompanies the preprint:
 
 <p align="center"> <b>Conserved core visual object recognition across simian primates: <br> Marmoset image-by-image behavior mirrors that of humans and macaques</b></p>
 
 <p align="center"> <a href="http://www.alexkell.org">Alexander J.E. Kell</a>, Sophie L. Bokor, You-Nah Jeon, Tahereh Toosi, <a href="https://zuckermaninstitute.columbia.edu/elias-b-issa-phd">Elias B. Issa</a></p>
 
-The data and images can be downloaded <a href="https://drive.google.com/drive/folders/1ROffAeMLelTZZGcjU37fwAtX_ZOleeSl?usp=sharing">here</a>. 
+The data and images can be downloaded <a href="https://drive.google.com/drive/folders/1k0hgEkWI5vO6jWRk4QklyMYsw1oMnwhm">here</a>. 
 
-The structure of the data and image directories is briefly described with some code snippets. For further questions, please email: first.last@columbia.edu (where first and last are "alex" and "kell").
+The structure of the data and image directories is briefly described below. For further questions, please email: first.last@columbia.edu (where first and last are "alex" and "kell").
 
 <br/>
 
@@ -18,7 +18,9 @@ The structure of the data and image directories is briefly described with some c
 ![](demo-images/objectome_leg_49f256d8dabc6b838fbe5edd065059a429423d77_ty0.11434_tz-0.95641_rxy-0.70757_rxz100.7196_ryz-104.9698_s1.6955.png?raw=true) ![](demo-images/objectome_rhino_3f47f215207f7778b30e7657a51e3f356d57cf05_ty-0.34168_tz0.73404_rxy96.0619_rxz-68.7854_ryz111.0928_s1.5602.png?raw=true)  ![](demo-images/objectome_wrench_4c517e6aa7106d77da033fcfff513c46440070bc_ty0.0071089_tz0.66901_rxy164.9007_rxz-16.5148_ryz-109.9868_s1.6494.png?raw=true) ![](demo-images/objectome_camel_055f0585df22892fd7382f4670f1ad1140aa9c7c_ty0.35276_tz-0.70707_rxy13.4384_rxz-160.8124_ryz144.5926_s1.3677.png?raw=true) ![](demo-images/objectome_wrench_0fca926347ac3078751295aa2db3a5d5f2419053_ty-0.52734_tz0.29721_rxy-61.7855_rxz-164.0429_ryz20.332_s1.0691.png?raw=true) ![](demo-images/objectome_rhino_8f74a3b222bb708b8806ea3ae2b8fa42ff9019ed_ty-0.32077_tz0.74069_rxy90.7533_rxz118.1939_ryz61.3188_s1.4104.png?raw=true)
 
 ### Images
-Images are in the directory `images-marmosetMacaqueHuman`, with a subdirectory for each of the four objects. The 400 images on which we compared marmosets with macaques and humans are in the `evaluation` subdirectory (e.g., `images-marmosetMacaqueHuman/wrench/evaluation`). We are also including the images used across the three stages of training (`token`, `training-low-variation`, and `training-high-variation`). The images used in the decision stage of the task, which the subjects touch to indicate their choice, are these same `token` images.
+Images are in the directory `images-marmosetMacaqueHuman`, with a subdirectory for each of the four objects (wrench, rhino, camel, leg). The 400 images on which we compared marmosets with macaques and humans are in the `evaluation` subdirectory (e.g., `images-marmosetMacaqueHuman/wrench/evaluation`). Also included are the images used for animal training (`token`, `training-low-variation`, and `training-high-variation`). The images used in the decision stage of the task (i.e., the ones subjects touch to indicate their choice) are these `token` images.
+
+<img src="demo-images/task-schematic.png" width="450">
 
 ### Data
 The data are pickled in Python. To load:
@@ -36,20 +38,20 @@ arr_n_trials, arr_n_correct, all_fnames = tmp['arr_n_trials'], tmp['arr_n_correc
 
 ```python
 [(k,len(all_fnames[k])) for k in all_fnames.keys()] == [('camel', 100), ('leg', 100), ('wrench', 100), ('rhino', 100)]
+
+all_fnames['camel'][0] == 'objectome_camel_01914fb75f1180b0b1d98adc04c617caa2f387d1_ty0.039663_tz0.32309_rxy-64.131_rxz-62.8524_ryz8.6478_s1.0404.png'
 ```
 
 <br/>
 
-`arr_n_trials` and `arr_n_correct` are dictionaries with values that are numpy arrays of, respectively, the number of trials and number of correct trials. 
-
-The keys are as follows: 
+`arr_n_trials` and `arr_n_correct` are dictionaries with values that are numpy arrays of, respectively, the number of trials and number of correct trials. The keys correspond to which dataset and are as follows: 
 ```python
 ['human_sr2', 'marmoset_sr2_22dva', 'marmoset_sr2_11dva', 'marmoset_sr2_pooledOverSize', 'macaque_mts24_from_rajalinghamEtAl']
 ```
 
 "dva" denotes degrees of visual angle and `marmoset_sr2_pooledOverSize` is simply the sum of the data from two different image sizes `marmoset_sr2_22dva` and `marmoset_sr2_11dva`.
 
-The data is arranged in a 5d array, the following indices: (subjects, days, target_object, distractor_object, image_idx). E.g.,
+The data is arranged in a 5d array, and axes are as follows: (`subjects`, `days`, `target_object`, `distractor_object`, `image_index`). E.g.,
 ```python
 arr_n_trials['marmoset_sr2_22dva'].shape == (5, 42, 4, 4, 100)
 ```
