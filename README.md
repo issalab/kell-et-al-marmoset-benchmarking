@@ -1,7 +1,7 @@
 # kell-et-al-marmoset-benchmarking
-This repository contains and describes data from work that benchmarks the high-level visual abilities of marmosets in comparison with humans, rhesus macaques, and rats. It also includes images used as stimuli for the comparisons, as well as images for animal training. It accompanies the preprint:
+This repository contains and describes data from work that benchmarks the high-level visual abilities of marmosets in comparison with humans, rhesus macaques, and rats. It also includes images used as stimuli for the comparisons, as well as images for animal training. It accompanies the <a href="https://doi.org/10.1101/2020.10.19.345561">preprint</a>:
 
-<p align="center"> <b>Conserved core visual object recognition across simian primates: <br> Marmoset image-by-image behavior mirrors that of humans and macaques</b></p>
+<p align="center"> <b> <a href="https://doi.org/10.1101/2020.10.19.345561">Conserved core visual object recognition across simian primates: <br> Marmoset image-by-image behavior mirrors that of humans and macaques </a> </b></p>
 
 <p align="center"> <a href="http://www.alexkell.org">Alexander J.E. Kell</a>, Sophie L. Bokor, You-Nah Jeon, Tahereh Toosi, <a href="https://zuckermaninstitute.columbia.edu/elias-b-issa-phd">Elias B. Issa</a></p>
 
